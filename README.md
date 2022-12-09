@@ -24,3 +24,6 @@ INGRESOS_MENSUALES, DEPENDIENTES, APROBADO)
 o ID
 o RFC
 o Aprobado o rechazado
+![image](https://user-images.githubusercontent.com/57772138/206637944-9b579f55-3452-4a2f-aca0-71bf1d8e7855.png)
+
+![image](https://user-images.githubusercontent.com/57772138/206638044-81d2e1cf-3b0c-4bf5-8b17-e2764a59a53d.png)
