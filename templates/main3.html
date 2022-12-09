@@ -1,0 +1,58 @@
+<html>
+
+<head> <H2> Aprobación de Crédito  </H2> </head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<br> 
+
+<body bgcolor="#E0F2F7"> 
+Nombre: <input  type="text" id = "nombre", name ="nombre"><br>  
+Apellido Paterno:       <input  type="text" id = "apepat", name ="apepat"><br> 
+Apellido Materno :      <input  type="text" id = "apemat", name ="apemat"><br> 
+Fecha de Nacimiento: <input  type="date" id = "fecnac", name ="fecnac"><br> 
+Ingresos Mensuales: <input  type="text" id = "ingmens", name ="ingmens"><br> 
+No. Dependientes económicos: <input  type="text" id = "depec", name ="depec"><br> 
+<input  type="button" id = "send", value ="Enviar"><br> 
+
+</body>
+
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {  
+  
+  var send = document.getElementById("send"); 
+  send.addEventListener("click", function(){
+  
+      var nombre = document.getElementById("nombre").value;
+      var apepat = document.getElementById("apepat").value;
+      var apemat = document.getElementById("apemat").value;
+      var fecnac = document.getElementById("fecnac").value;
+      var ingmens = document.getElementById("ingmens").value;
+      var depec = document.getElementById("depec").value;
+  
+      var data = {"nombre":nombre, "apepat":apepat, "apemat":apemat, "fecnac":fecnac, "ingmens":ingmens, "depec":depec};
+      console.log(data); 
+      $.ajax({
+              url: "http://127.0.0.1:5000/info",
+              type: 'POST',
+              mode: 'no-cors',
+              data: JSON.stringify(data),
+              cache: false,
+              startTime: performance.now(),
+              contentType: "application/json; charset=utf-8",
+              processData: false,
+              success: function(response) {
+                alert(response)    
+                console.log(response);
+              
+              }
+            })
+
+         });
+  });
+  
+  
+  </script>
+  
+</html>
+
